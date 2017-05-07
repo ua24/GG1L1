@@ -12,6 +12,9 @@ class SecondViewController: UIViewController {
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         UserDefaults.standard.set(arc4random()%234, forKey: "numb")
+        Downloader.downloadImageWithCallback { (picture) in
+            self.view.backgroundColor = UIColor(patternImage: picture)
+        }
     }
 
 }

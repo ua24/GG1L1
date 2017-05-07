@@ -39,5 +39,14 @@ class Downloader: NSObject {
         
         
     }
+    
+    static func downloadImageWithCallback(_ handler: ((UIImage) -> Swift.Void)? = nil) {
+        kBgQ.async {
+            let img = self.downloadImage()
+            kMainQueue.async {
+                handler?(img)
+            }
+        }
+    }
 
 }

@@ -33,7 +33,6 @@ class ViewController: UIViewController {
         
     }
     
-    
     func imageDownloaded(notification: Notification) {
         print(notification)
 //        let picture = notification.userInfo!["image"] as! UIImage
@@ -48,7 +47,6 @@ class ViewController: UIViewController {
         
         Downloader.downloadImageAndPostNotification()
     }
-    
     
 
 }
